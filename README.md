@@ -1,4 +1,4 @@
-# Creator Pack: 14 free Claude skills for short-form video
+# Creator Pack: 20 free Claude skills for short-form video
 
 ![From the reel](reel.jpg)
 
@@ -9,7 +9,7 @@
 
 ---
 
-One free folder. Fourteen Claude skills for editing short-form video: captions, cuts, motion graphics, hooks, scripts, styles and QC. They work on a fresh Claude install. Everything runs on your own computer; nothing gets posted or paid for without you.
+One free folder. Twenty Claude skills for editing short-form video: captions, cuts, motion graphics, hooks, scripts, styles and QC. They work on a fresh Claude install. Everything runs on your own computer; nothing gets posted or paid for without you.
 
 ## How to install
 
@@ -19,7 +19,21 @@ One free folder. Fourteen Claude skills for editing short-form video: captions, 
 
 Claude follows `INSTALL.md`: it copies each skill into your skills folder, checks whether you have the free tools some skills need (ffmpeg, Python, Node), and shows you one example prompt per skill.
 
-## The 14 skills
+## Came from a reel? Find your pack
+
+You commented a word on a reel and got this link. Here is what each word gets you. Install the whole folder (below) and they are all there.
+
+| You commented | You get | What it does |
+|---|---|---|
+| **CAPTION** | caption-writer, social-seo, captions-and-clipping | Captions Instagram search can find |
+| **HOOK** | hook-writer, viral-hooks, hook-virality-check | Your hook written seven ways, and which one wins |
+| **FORMAT** | reel-formats-library | Reel formats that work, broken down second by second |
+| **RANK** | rank-fast-seo-article | One page built to rank on Google |
+| **PLAN** | batch-content-plan | A whole month of posts planned in one sitting |
+| **GAP** | competitor-analysis | Studies your rivals' public pages and finds the gap you can own |
+| **CUT** / **WATCH** | the editing and research skills below | Tight cuts and cheap video reading |
+
+## All 20 skills
 
 **Editing**
 - **reel-cutter**: turns a raw talking-to-camera clip into a tight reel. Cuts pauses, ums, stutters and retakes without clipping a word, then listens to the result to check it.
@@ -39,6 +53,14 @@ Claude follows `INSTALL.md`: it copies each skill into your skills folder, check
 - **caption-writer**: writes platform-native post captions with one goal and one call to action.
 - **hook-virality-check**: compares several hook versions of the same reel, picks the winner and finds the drop-off point to re-edit.
 
+**Captions, SEO and planning**
+- **social-seo**: makes posts findable in Instagram, TikTok and YouTube search with keywords in the caption, on screen and spoken.
+- **captions-and-clipping**: turns long videos into short clips with captions that read well on mute.
+- **viral-hooks**: three hook versions from a library of 100 hook formulas.
+- **rank-fast-seo-article**: writes one article built to rank for one keyword, with a real opinion in it.
+- **batch-content-plan**: plans a month of posts in one go, never day by day.
+- **competitor-analysis**: reads rivals' public pages, what they post and what gets engagement, and finds the gap.
+
 **Research and QC**
 - **video-contact-sheet**: reads any video cheaply (one tiled image plus a transcript instead of dozens of frames). Use it to study references and to QC your own renders.
 - **hook-flip-reel-scout**: finds and verifies reference reels for the "raw moment, then hard flip to product" ad format.
@@ -49,4 +71,4 @@ Nothing to start. Some skills use free tools: **ffmpeg**, **Python** (with faste
 
 ## Licences
 
-`hook-writer`, `caption-writer` and `cinematic-director` are MIT-licensed. Their licence notices are kept: the `license: MIT` line in each `SKILL.md`, and the `LICENSE` file in `cinematic-director`.
+`hook-writer`, `caption-writer`, `social-seo`, `batch-content-plan`, `viral-hooks` and `cinematic-director` are MIT-licensed. Their licence notices are kept: the `license: MIT` line in each `SKILL.md`, and the `LICENSE` file in `viral-hooks` and `cinematic-director`.

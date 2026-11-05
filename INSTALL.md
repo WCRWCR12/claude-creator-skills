@@ -4,14 +4,14 @@ The user has dragged this folder in and asked to install the skills. Do the foll
 
 ## 1. Copy the skills
 
-Copy each of the 14 skill folders (every folder in this directory that contains a `SKILL.md`) into the user's personal skills folder:
+Copy each of the 20 skill folders (every folder in this directory that contains a `SKILL.md`) into the user's personal skills folder:
 
 - Mac / Linux: `~/.claude/skills/`
 - Windows: `%USERPROFILE%\.claude\skills\`
 
 Create the folder if it doesn't exist. Copy whole folders, including `scripts/`, `references/`, `assets/`, `evals/` and `LICENSE` files. If a skill with the same name is already installed, ask the user before replacing it. Don't copy `README.md` or `INSTALL.md`.
 
-The 14 folders: `reel-cutter`, `caption-sync`, `instagram-edit`, `anti-slop-ai-video-editing`, `motion-graphics-render-loop`, `animation-ground-truth`, `reel-style`, `reel-formats-library`, `cinematic-director`, `hook-writer`, `caption-writer`, `hook-virality-check`, `video-contact-sheet`, `hook-flip-reel-scout`.
+The 20 folders: `social-seo`, `captions-and-clipping`, `viral-hooks`, `rank-fast-seo-article`, `batch-content-plan`, `competitor-analysis`, `reel-cutter`, `caption-sync`, `instagram-edit`, `anti-slop-ai-video-editing`, `motion-graphics-render-loop`, `animation-ground-truth`, `reel-style`, `reel-formats-library`, `cinematic-director`, `hook-writer`, `caption-writer`, `hook-virality-check`, `video-contact-sheet`, `hook-flip-reel-scout`.
 
 ## 2. Check the free tools
 
