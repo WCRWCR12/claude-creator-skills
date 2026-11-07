@@ -4,14 +4,14 @@ The user has dragged this folder in and asked to install the skills. Do the foll
 
 ## 1. Copy the skills
 
-Copy each of the 20 skill folders (every folder in this directory that contains a `SKILL.md`) into the user's personal skills folder:
+Copy each of the 21 skill folders (20 + the bonus logo-animation) (every folder in this directory that contains a `SKILL.md`) into the user's personal skills folder:
 
 - Mac / Linux: `~/.claude/skills/`
 - Windows: `%USERPROFILE%\.claude\skills\`
 
 Create the folder if it doesn't exist. Copy whole folders, including `scripts/`, `references/`, `assets/`, `evals/` and `LICENSE` files. If a skill with the same name is already installed, ask the user before replacing it. Don't copy `README.md` or `INSTALL.md`.
 
-The 20 folders: `social-seo`, `captions-and-clipping`, `viral-hooks`, `rank-fast-seo-article`, `batch-content-plan`, `competitor-analysis`, `reel-cutter`, `caption-sync`, `instagram-edit`, `anti-slop-ai-video-editing`, `motion-graphics-render-loop`, `animation-ground-truth`, `reel-style`, `reel-formats-library`, `cinematic-director`, `hook-writer`, `caption-writer`, `hook-virality-check`, `video-contact-sheet`, `hook-flip-reel-scout`.
+The 20 folders: `social-seo`, `captions-and-clipping`, `viral-hooks`, `rank-fast-seo-article`, `batch-content-plan`, `competitor-analysis`, `reel-cutter`, `caption-sync`, `instagram-edit`, `anti-slop-ai-video-editing`, `motion-graphics-render-loop`, `animation-ground-truth`, `reel-style`, `reel-formats-library`, `cinematic-director`, `hook-writer`, `caption-writer`, `hook-virality-check`, `video-contact-sheet`, `hook-flip-reel-scout`, `logo-animation`.
 
 ## 2. Check the free tools
 
@@ -23,7 +23,7 @@ Run each check and tell the user what's present and what's missing. Don't instal
 | Python 3.9+ | `python --version` (or `python3`) | reel-cutter, caption-sync, instagram-edit, video-contact-sheet, hook-flip-reel-scout | python.org, or `winget install Python.Python.3.12` / `brew install python` |
 | Python packages | `python -c "import faster_whisper, numpy, PIL"` | reel-cutter, caption-sync, instagram-edit, video-contact-sheet | `pip install faster-whisper numpy pillow` (the first run downloads a ~500 MB speech model) |
 | yt-dlp | `python -m yt_dlp --version` | video-contact-sheet, hook-flip-reel-scout (only for studying reference videos) | `pip install yt-dlp` |
-| Node 18+ | `node --version` | motion-graphics-render-loop, instagram-edit (graphics stage), animation-ground-truth | nodejs.org, or `winget install OpenJS.NodeJS.LTS` / `brew install node`. Remotion is set up per project with `npx create-video@latest`. |
+| Node 18+ | `node --version` | logo-animation, motion-graphics-render-loop, instagram-edit (graphics stage), animation-ground-truth | nodejs.org, or `winget install OpenJS.NodeJS.LTS` / `brew install node`. Remotion is set up per project with `npx create-video@latest`. |
 
 The writing skills (hook-writer, caption-writer, reel-formats-library, anti-slop-ai-video-editing, cinematic-director, reel-style) need nothing installed.
 
@@ -39,6 +39,7 @@ Give them this list (one example prompt each):
 | anti-slop-ai-video-editing | "Edit this reel and follow the anti-slop rules." |
 | motion-graphics-render-loop | "Make a 20-second motion-graphics promo for [product] at 120 BPM." |
 | animation-ground-truth | "Animate this script in the breakout-card style." |
+| logo-animation | "Animate my logo: `logo.svg`. Then make a green version." |
 | reel-style | "Plan the shots for a tool-explainer reel about [tool] in our reel style." |
 | reel-formats-library | "Which reel format should I use to launch [product]? Give me the beat sheet." |
 | cinematic-director | "Write a shot plan and video prompts for a 30-second moody product film." |

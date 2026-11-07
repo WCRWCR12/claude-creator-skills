@@ -27,13 +27,13 @@ You commented a word on a reel and got this link. Here is what each word gets yo
 |---|---|---|
 | **CAPTION** | caption-writer, social-seo, captions-and-clipping | Captions Instagram search can find |
 | **HOOK** | hook-writer, viral-hooks, hook-virality-check | Your hook written seven ways, and which one wins |
-| **FORMAT** | reel-formats-library | Reel formats that work, broken down second by second |
+| **FORMAT** | reel-formats-library, logo-animation, motion-graphics-render-loop | Reel formats that work, plus your logo animated in code (draws in lines, explodes, snaps back) |
 | **RANK** | rank-fast-seo-article | One page built to rank on Google |
 | **PLAN** | batch-content-plan | A whole month of posts planned in one sitting |
 | **GAP** | competitor-analysis | Studies your rivals' public pages and finds the gap you can own |
 | **CUT** / **WATCH** | the editing and research skills below | Tight cuts and cheap video reading |
 
-## All 20 skills
+## All 20 skills (+ 1 bonus)
 
 **Editing**
 - **reel-cutter**: turns a raw talking-to-camera clip into a tight reel. Cuts pauses, ums, stutters and retakes without clipping a word, then listens to the result to check it.
@@ -42,6 +42,7 @@ You commented a word on a reel and got this link. Here is what each word gets yo
 - **anti-slop-ai-video-editing**: five rules that stop AI edits looking like AI slop (captions, imagery, placement, cuts, motion graphics).
 
 **Motion graphics and style**
+- **logo-animation** (bonus): give Claude your logo and it draws it in lines, explodes it into parts and snaps it back together, four seconds, in code. Ask for any colour.
 - **motion-graphics-render-loop**: makes coded motion-graphics reels in Remotion (spring physics, beat-locked cuts) with a self-critique loop that hunts dead frames.
 - **animation-ground-truth**: a complete spec for the "breakout card" animation style, plus a split-screen presenter style and an images-first animation workflow.
 - **reel-style**: a complete house style for face-to-camera tool-explainer reels: hook card, B-roll rules, captions, script skeleton, shot plan and QA checklist.
