@@ -1,18 +1,77 @@
 ---
 name: animation-ground-truth
-description: A complete spec for the "breakout card" animation style for 9:16 reels - richly decorated cards where animated characters, data viz and UI elements physically break out of or sit on top of card borders - plus a sibling split-screen talking-head-with-inserts style and an images-first animation workflow. Use for faceless animated reels, animated explainers, workflow/tool explainers, any code-made animation, or "make it look like that breakout-card style". Not for plain live-action talking-head takes (use reel-style for those).
-version: 1.0
+description: A house animation style for motion graphics and faceless reels. Current method is "camera through a built scene": build a real-feeling scene (world, props, characters, lighting) and move a virtual camera through it (pull back, dolly zoom, crane and land, orbit, zoom-through, follow) instead of animating drawn objects popping in. Also keeps the alternate "breakout card" style spec (cards with characters breaking over the borders), a split-screen presenter style and an images-first workflow. Use for faceless animated reels, explainers and any code-made animation. Not for plain live-action talking-head takes (use reel-style).
+version: 2.0
 ---
 
-# Animation Ground Truth: Breakout Card Style
+# Animation Ground Truth: Camera Through a Built Scene
 
-**Source:** the style was studied frame by frame from public Instagram reels (main reference: instagram.com/reel/DewfwFatY8F, Oct 2026). Use the reference reel as a visual check if you can view it; this file is written so it works without it.
+Technique inspired by: @science_in_8bit (Instagram)
 
-Pick this as the one house style for every animated piece in a project, so every animation and every piece of animated content looks like one series.
+Pick one house style for every animated piece in a project so everything looks like one series. The current default is the camera-through-a-scene method below. The older breakout-card style is kept further down as an alternate; use it only when a brief asks for it by name.
 
 ## Setup
-- Remotion (`npx create-video@latest`) or any code-based animation tool; ffmpeg for contact sheets and QA.
-- Optional, images-first workflow only (section 9): an image generator of the user's choice. Claude never pays for or runs a paid generator without the user's explicit OK.
+- Remotion (`npx create-video@latest`) or any code-based animation tool; Three.js or Blender-exported scenes for true 3D; ffmpeg for contact sheets and QA.
+- Optional, images-first workflow only (section 9 of the alternate style): an image generator of your choice. Never pay for or run a paid generator without explicit OK.
+
+## The rule (one line)
+
+Build the full scene first. Then move a virtual camera through it. The camera move is the animation.
+
+## What that means in practice
+
+| Do | Don't |
+|---|---|
+| Set up a 3D or 2.5D world: background, mid-ground, hero prop, lighting, characters already placed. | Draw and animate individual shapes popping in, bouncing or sliding onto a flat canvas. |
+| Author the shot as a camera path: start frame, end frame, with an ease. | Author the shot as a layer stack where each element has its own entrance animation. |
+| Use named cinematic moves: Pull Back (reveal scale), Push In (intensity), Dolly (travel), Crane Up + Land (god's-eye to intimate), Orbit (show it from all sides), Rack Focus (lead the eye). | Use generic "fade in, slide up, bounce". |
+| One or two beats per shot; let the camera breathe (1.2-3 s per shot). | Stack ten micro-animations on one card. |
+| Make the world in the shot feel real (depth, parallax, consistent lighting), even if stylised. | Float UI chips on a plain background and call it a scene. |
+| Put characters in the scene, on the ground with the props, and let the camera find them. | Sit characters on top of a "card" doing pop-up gestures. |
+
+## Reference cinematic moves
+
+The source reel teaches the catalogue as a split-screen hook (same scene, "no camera" vs "with camera"), then walks three moves across flat-colour illustrated harbour scenes:
+
+1. **Pull Back.** Start close on the subject, pull the camera out to reveal the wider scene. Shows scale and context.
+2. **Dolly Zoom.** The camera physically moves while the lens zooms the opposite way, so the subject stays the same size and the background warps. Shows unease, importance or realisation.
+3. **Crane Up + Land.** Start high, drop down and in on the subject, land at eye level. Shows arrival, discovery, "you are here".
+
+Additional moves that work well in explainers:
+4. **360 Orbit.** The camera arcs around a hero object (a bottle, a brain, a server box) so the viewer sees every side. Good for "look at the thing we built".
+5. **Zoom-through.** The camera flies into a scene, through a layer, and out the other side into a new scene. Good for transitions (outside a building to inside the team room).
+6. **Follow / travel.** The camera tracks an element in motion (a package, an invoice, a signal) through the scene.
+
+## Build pipeline
+
+1. **Plan the camera first.** For every beat, write start pose, end pose, ease and duration before touching textures or extras.
+2. **Build the world, then light it.** Use Remotion for 2D/2.5D, Three.js or Blender for 3D. Lock depth and lighting before placing characters.
+3. **Place characters and props in the world** at a specific location. The character does not float in; the camera finds the character.
+4. **Render the camera move at full frame rate (30 fps minimum).** No stepped frame rates, except possibly one deliberate beat, never the whole reel.
+5. **Side-by-side before anyone sees it.** Diff against your reference frame for frame and fix what doesn't match. A contact sheet of the render (`video-contact-sheet` skill) makes this quick.
+
+## Scope
+
+Use for: faceless animated reels, product explainers, office or world animations, site videos, and any motion-graphics piece, by default.
+
+Do not use for:
+- Live-action talking-head takes (use the `reel-style` skill).
+- Pure UI screen recordings where the "camera" would just be a scroll. Those are their own format.
+
+## Companion skills
+
+- `numbered-technique-showcase-reel`: the hook format from the source reel (split-screen before/after, numbered moves, social-proof CTA). Use when the reel itself teaches a technique.
+- `one-to-one-style`: copying a specific reference reel at a chosen fidelity.
+- `cinematic-director`: move vocabulary and lensing.
+- `motion-graphics-render-loop`: the render and critic cycle.
+
+---
+
+# Alternate style: Breakout Card
+
+Previous default, kept for when a brief asks for "breakout card". Otherwise use the camera-through-a-scene method above. (Where the two conflict, for example "no camera moves", the rules below apply only inside a breakout-card piece.)
+
+Source: studied frame by frame from public Instagram reels. This file is written so it works without the reference.
 
 ---
 

@@ -1,0 +1,60 @@
+{
+  "repo": "WCRWCR12/claude-creator-skills",
+  "packs": [
+    {
+      "id": "01-animation-styles",
+      "title": "Animation Styles",
+      "keyword": "FORMAT",
+      "blurb": "Make the animations from the reels: 100+ coded animation styles (paper cut-out, clay, pixel art, chalk, neon and more), your logo animated, motion-graphics reels with a self-critique loop.",
+      "skills": ["animation-styles", "animation-ground-truth", "motion-graphics-render-loop", "logo-animation", "numbered-technique-showcase-reel", "one-to-one-style", "pixel-narrator", "video-contact-sheet"]
+    },
+    {
+      "id": "02-video-editing",
+      "title": "Video Editing",
+      "keyword": "CUT",
+      "blurb": "Raw clip to finished reel: tight cuts, word-by-word captions, voiceover direction, local text-to-speech, sounds, and a video editor Claude builds for you.",
+      "skills": ["reel-cutter", "caption-sync", "instagram-edit", "anti-slop-ai-video-editing", "live-editable-video-editor", "vo-delivery-direction", "voice-studio-local-tts", "trending-sounds"]
+    },
+    {
+      "id": "03-hooks-and-scripts",
+      "title": "Hooks and Scripts",
+      "keyword": "HOOK",
+      "blurb": "Hooks written seven ways and tested, 100 hook formulas, and scripts for Reels and TikTok that hold attention to the end.",
+      "skills": ["hook-writer", "viral-hooks", "hook-virality-check", "reels-script", "tiktok-script", "scriptwriting-methodology", "content-principles", "illusion-of-novelty"]
+    },
+    {
+      "id": "04-reel-formats-and-research",
+      "title": "Reel Formats and Research",
+      "keyword": "WATCH",
+      "blurb": "Proven reel formats beat by beat, a house reel style, film-director shot plans, and tools to study any video or rival cheaply.",
+      "skills": ["reel-formats-library", "reel-style", "cinematic-director", "hook-flip-reel-scout", "real-screenshots-value-led", "viral-reverse-engineering", "bot-series-workflow", "competitor-analysis"]
+    },
+    {
+      "id": "05-captions-and-growth",
+      "title": "Captions and Growth",
+      "keyword": "CAPTION",
+      "blurb": "Captions Instagram and TikTok search can find, hashtags, profile fixes, clipping long videos, and a daily engagement routine.",
+      "skills": ["caption-writer", "social-seo", "captions-and-clipping", "hashtag-strategy", "instagram-growth", "tiktok-growth", "profile-optimization", "engagement-routine"]
+    },
+    {
+      "id": "06-plan-and-brand",
+      "title": "Plan and Brand",
+      "keyword": "PLAN",
+      "blurb": "A month of posts in one sitting, content pillars, your brand voice, your audience's own words, trends worth jumping on, carousels and image prompts.",
+      "skills": ["batch-content-plan", "content-calendar", "content-pillars", "social-strategy", "brand-profile", "voice-builder", "audience-research", "trend-jacking", "image-prompt", "auto-carousel"]
+    },
+    {
+      "id": "07-seo-and-clients",
+      "title": "SEO and Getting Clients",
+      "keyword": "RANK",
+      "blurb": "Rank on Google and in AI search, get listed, turn a viral video into a page, and run outreach and ads that bring in clients.",
+      "skills": ["rank-fast-seo-article", "parasite-seo", "local-citations-listings", "founder-about-page-seo", "meta-muse-content-research", "viral-reel-to-page", "cold-email-infrastructure", "google-ads-offer-led-playbook", "website-revamp-outreach"]
+    }
+  ],
+  "extra_keywords": {
+    "GAP": "04-reel-formats-and-research",
+    "SKILL": "ULTRA",
+    "SKILLS": "ULTRA",
+    "GUIDE": "ULTRA"
+  }
+}
