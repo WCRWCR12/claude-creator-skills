@@ -1,0 +1,18 @@
+# Example myth-explainer script. Check it with: python tools/myth_script_lint.py tools/myth_script_example.txt
+# Answer and source (never on screen): sideways motion does not change how fast a thing falls, so a ball thrown level and a
+# ball dropped from the same height at the same instant land together (air drag makes a tiny difference). Any school
+# physics text on projectile motion; fall time t = sqrt(2h/g).
+
+A: If you threw a ball flat off a rooftop and dropped another at the same moment, most people assume the dropped
+   one would land first. But that's not exactly what would happen. You see, if you rolled a marble off a table and
+   let one fall beside it, they would hit the floor together. But when you throw one and drop one, the two balls
+
+C: fall at exactly the same rate. The thrown one just travels a long way while it falls, so they land at the same
+   moment, just like the marbles.
+
+SAFETY: no
+
+CHUNKS: IF YOU / THREW A BALL / FLAT OFF / A ROOFTOP / AND DROPPED / ANOTHER / AT THE / SAME MOMENT / MOST PEOPLE /
+   ASSUME / THE DROPPED ONE / WOULD LAND / FIRST / BUT / THAT'S NOT / EXACTLY WHAT / WOULD HAPPEN / YOU SEE /
+   IF YOU ROLLED / A MARBLE / OFF A TABLE / AND LET ONE / FALL / BESIDE IT / THEY WOULD / HIT THE FLOOR / TOGETHER /
+   BUT WHEN YOU / THROW ONE / AND DROP ONE / THE TWO BALLS

@@ -51,7 +51,17 @@
       "skills": ["rank-fast-seo-article", "parasite-seo", "local-citations-listings", "founder-about-page-seo", "meta-muse-content-research", "viral-reel-to-page", "cold-email-infrastructure", "google-ads-offer-led-playbook", "website-revamp-outreach"]
     }
   ],
+  "bundles": [
+    {
+      "id": "reel-pack-v2",
+      "title": "Reel Pack v2",
+      "keyword": "PACK",
+      "path": "reel-pack",
+      "blurb": "A whole reel studio for Claude Code, not just skills: make coded 9:16 videos in the myth-explainer style (a 3D man in a blue grid studio, one-second shots, 1-3 word captions) and lit 3D hero shots. Includes the rigged character, the studio kit, a crew of agents, check tools and a worked example. Unzip, run the installer, open Claude Code in the folder."
+    }
+  ],
   "extra_keywords": {
+    "PACK": "reel-pack-v2",
     "GAP": "04-reel-formats-and-research",
     "SKILL": "ULTRA",
     "SKILLS": "ULTRA",

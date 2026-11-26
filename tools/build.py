@@ -4,6 +4,8 @@ Run from the repo root:  python tools/build.py
 - checks every skill in packs.json exists and has a SKILL.md with name + description
 - scans skills/ for secrets and private details (fails the build on a hit)
 - writes downloads/<pack-id>.zip and downloads/ULTRA-all-skills.zip (stable timestamps)
+- for each entry in packs.json "bundles" (a whole folder shipped as one zip, e.g. the Reel Pack studio): scans it the
+  same way and writes downloads/<bundle-id>.zip
 - rewrites the blocks between <!-- PACKS:START --> / <!-- PACKS:END --> and
   <!-- SKILLS:START --> / <!-- SKILLS:END --> in README.md
 """
@@ -17,7 +19,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKILLS = os.path.join(ROOT, "skills")
 DL = os.path.join(ROOT, "downloads")
 STAMP = (2026, 1, 1, 0, 0, 0)
-SKIP_DIRS = {".git", "__pycache__", "node_modules", ".venv"}
+SKIP_DIRS = {".git", "__pycache__", "node_modules", ".venv", "out"}
 SKIP_EXT = {".pyc", ".mp4", ".mov", ".bak"}
 
 # Private details and secrets that must never ship. Case-sensitive on purpose ("will" the verb is fine).
@@ -29,7 +31,7 @@ BLOCK = [
     r"AKIA[0-9A-Z]{16}", r"AIza[0-9A-Za-z_-]{30,}", r"xox[bap]-[A-Za-z0-9-]{10,}",
     r"\b\d{8,10}:[A-Za-z0-9_-]{30,}\b", r"-----BEGIN [A-Z ]*PRIVATE KEY-----",
 ]
-TEXT_EXT = {".md", ".txt", ".json", ".py", ".js", ".ts", ".tsx", ".jsx", ".css", ".html", ".yml", ".yaml", ".sh", ".csv"}
+TEXT_EXT = {".md", ".txt", ".json", ".py", ".js", ".ts", ".tsx", ".jsx", ".css", ".html", ".yml", ".yaml", ".sh", ".csv", ".ps1"}
 
 
 def frontmatter(path):
@@ -69,6 +71,37 @@ def scan(skills):
                 for m in re.finditer(pat, t):
                     hits.append(f"{os.path.relpath(p, ROOT)}: {pat} -> {m.group(0)[:40]}")
     return hits
+
+
+def files_under(base):
+    for a, dirs, fs in os.walk(base):
+        dirs[:] = sorted(x for x in dirs if x not in SKIP_DIRS)
+        for f in sorted(fs):
+            if os.path.splitext(f)[1].lower() in SKIP_EXT or ".bak" in f:
+                continue
+            yield os.path.join(a, f)
+
+
+def scan_tree(base):
+    hits = []
+    for p in files_under(base):
+        if os.path.splitext(p)[1].lower() not in TEXT_EXT:
+            continue
+        t = open(p, encoding="utf-8", errors="replace").read()
+        for pat in BLOCK:
+            for m in re.finditer(pat, t):
+                hits.append(f"{os.path.relpath(p, ROOT)}: {pat} -> {m.group(0)[:40]}")
+    return hits
+
+
+def write_tree_zip(path, top, base):
+    with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
+        for p in files_under(base):
+            rel = os.path.relpath(p, base).replace(os.sep, "/")
+            zi = zipfile.ZipInfo(f"{top}/{rel}", STAMP)
+            zi.compress_type = zipfile.ZIP_DEFLATED
+            zi.external_attr = (0o755 if rel.endswith(".sh") else 0o644) << 16
+            z.writestr(zi, open(p, "rb").read())
 
 
 def write_zip(path, top, skills, extra):
@@ -117,6 +150,14 @@ def main():
     if orphans:
         errors.append("skills not in any pack: " + ", ".join(orphans))
     hits = scan(list(seen))
+    bundles = cfg.get("bundles", [])
+    for b in bundles:
+        base = os.path.join(ROOT, b["path"])
+        if not os.path.isfile(os.path.join(base, "README.md")):
+            errors.append(f"bundle {b['id']}: {b['path']}/README.md is missing")
+            continue
+        hits += scan_tree(base)
+        b["n_skills"] = sum(1 for p in files_under(os.path.join(base, ".claude", "skills")) if os.path.basename(p) == "SKILL.md" and os.path.dirname(os.path.dirname(p)).endswith("skills"))
     if hits:
         errors += ["private/secret hit: " + h for h in hits]
     if errors:
@@ -145,11 +186,17 @@ def main():
               [("README.md", ultra_readme), ("INSTALL.md", install), ("LICENSES.md", licence),
                ("FORMAT-GUIDE.md", open(os.path.join(ROOT, "FORMAT-GUIDE.md"), "rb").read())])
 
+    for b in bundles:
+        write_tree_zip(os.path.join(DL, b["id"] + ".zip"), b["id"], os.path.join(ROOT, b["path"]))
+
     def kb(f):
         return max(1, os.path.getsize(os.path.join(DL, f)) // 1024)
 
     ultra_kb = kb("ULTRA-all-skills.zip")
     rows = [f"| **ULTRA** (everything) | {len(all_skills)} | **[Download ULTRA ({ultra_kb} KB)]({raw}/ULTRA-all-skills.zip)** | every pack below in one folder |"]
+    for b in bundles:
+        mb = kb(b["id"] + ".zip") / 1024
+        rows.append(f"| **{b['title']}** (`{b['keyword']}`) | {b['n_skills']} + studio kit | **[Download]({raw}/{b['id']}.zip)** ({mb:.1f} MB) | {b['blurb']} [What's inside]({b['path']}/README.md) |")
     for p in cfg["packs"]:
         rows.append(f"| **{p['title']}** (`{p['keyword']}`) | {len(p['skills'])} | [Download]({raw}/{p['id']}.zip) ({kb(p['id'] + '.zip')} KB) | {p['blurb']} |")
     packs_md = "| Pack | Skills | Download | What you get |\n|---|---|---|---|\n" + "\n".join(rows)

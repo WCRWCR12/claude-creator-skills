@@ -1,0 +1,5 @@
+# Python helpers for the check tools (python 3.10+). ffmpeg must be on PATH.
+numpy>=1.26         # also all that make_sfx.py and make_pad.py need (myth_script_lint.py needs nothing)
+scipy>=1.11
+faster-whisper>=1.0   # only for the word check in sound_check.py (downloads a speech model on first use)
+matplotlib>=3.8       # optional: loudness plot (falls back to CSV)

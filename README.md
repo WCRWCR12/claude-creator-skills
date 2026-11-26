@@ -18,6 +18,7 @@ Every pack is built with **[Vera](https://github.com/WCRWCR12/vera)**, a free AI
 | Pack | Skills | Download | What you get |
 |---|---|---|---|
 | **ULTRA** (everything) | 59 | **[Download ULTRA (955 KB)](https://github.com/WCRWCR12/claude-creator-skills/raw/main/downloads/ULTRA-all-skills.zip)** | every pack below in one folder |
+| **Reel Pack v2** (`PACK`) | 15 + studio kit | **[Download](https://github.com/WCRWCR12/claude-creator-skills/raw/main/downloads/reel-pack-v2.zip)** (10.9 MB) | A whole reel studio for Claude Code, not just skills: make coded 9:16 videos in the myth-explainer style (a 3D man in a blue grid studio, one-second shots, 1-3 word captions) and lit 3D hero shots. Includes the rigged character, the studio kit, a crew of agents, check tools and a worked example. Unzip, run the installer, open Claude Code in the folder. [What's inside](reel-pack/README.md) |
 | **Animation Styles** (`FORMAT`) | 8 | [Download](https://github.com/WCRWCR12/claude-creator-skills/raw/main/downloads/01-animation-styles.zip) (70 KB) | Make the animations from the reels: 100+ coded animation styles (paper cut-out, clay, pixel art, chalk, neon and more), your logo animated, motion-graphics reels with a self-critique loop. |
 | **Video Editing** (`CUT`) | 8 | [Download](https://github.com/WCRWCR12/claude-creator-skills/raw/main/downloads/02-video-editing.zip) (41 KB) | Raw clip to finished reel: tight cuts, word-by-word captions, voiceover direction, local text-to-speech, sounds, and a video editor Claude builds for you. |
 | **Hooks and Scripts** (`HOOK`) | 8 | [Download](https://github.com/WCRWCR12/claude-creator-skills/raw/main/downloads/03-hooks-and-scripts.zip) (69 KB) | Hooks written seven ways and tested, 100 hook formulas, and scripts for Reels and TikTok that hold attention to the end. |
@@ -35,6 +36,8 @@ Every pack is built with **[Vera](https://github.com/WCRWCR12/vera)**, a free AI
 
 Claude follows `INSTALL.md`: it copies each skill into your skills folder, checks whether you have the free tools some skills need (ffmpeg, Python, Node), and shows you one example prompt per skill. Start a new chat afterwards so the skills load.
 
+**The Reel Pack installs differently.** It is a full project folder, not loose skills: unzip it, run its installer (`install.ps1` on Windows, `install.sh` on Mac and Linux), then open Claude Code in that folder. Steps and a first prompt are in [reel-pack/README.md](reel-pack/README.md).
+
 ## Came from a reel? Find your pack
 
 | You commented | Get this |
@@ -47,6 +50,7 @@ Claude follows `INSTALL.md`: it copies each skill into your skills folder, check
 | **PLAN** | Plan and Brand pack |
 | **RANK** | SEO and Getting Clients pack |
 | **SKILLS** / **GUIDE** | ULTRA (everything) |
+| **PACK** | [Reel Pack v2](reel-pack/README.md): the whole reel studio (myth-explainer videos with a 3D man in a blue grid studio, plus 3D hero shots) |
 
 ## Every skill
 
@@ -138,8 +142,8 @@ Nothing to start. Some skills use free tools: **ffmpeg**, **Python** (with faste
 
 ## Licences
 
-Most skills are our own. Some are MIT-licensed skills by other authors, with their licence notices kept. See [LICENSES.md](LICENSES.md).
+Most skills are our own. Some are MIT-licensed skills by other authors, with their licence notices kept. See [LICENSES.md](LICENSES.md). The Reel Pack has its own `LICENSE` and `THIRD-PARTY-NOTICES.md` (its 3D character and motion clips are CC0 by Quaternius).
 
 ## For maintainers
 
-Skills live in `skills/`. Packs are defined in `packs.json`. Run `python tools/build.py` to check every skill, scan for private details, rebuild the zips in `downloads/` and refresh the tables in this README.
+Skills live in `skills/`. Packs are defined in `packs.json`. Run `python tools/build.py` to check every skill, scan for private details, rebuild the zips in `downloads/` and refresh the tables in this README. The Reel Pack lives in `reel-pack/` as a whole folder and is listed under `bundles` in `packs.json`; the build scans it the same way and zips it to `downloads/reel-pack-v2.zip`.
